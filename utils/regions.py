@@ -1,0 +1,18 @@
+REGION_MAP = {
+    "NA": ("na1", "americas"),
+    "LAN": ("la1", "americas"),
+    "LAS": ("la2", "americas"),
+    "BR": ("br1", "americas"),
+    "EUW": ("euw1", "europe"),
+    "EUNE": ("eun1", "europe"),
+    "TR": ("tr1", "europe"),
+    "RU": ("ru", "europe"),
+    "KR": ("kr", "asia"),
+    "JP": ("jp1", "asia"),
+    "OCE": ("oc1", "sea"),
+    "PH": ("ph2", "sea"),
+    "SG": ("sg2", "sea"),
+    "TH": ("th2", "sea"),
+    "TW": ("tw2", "sea"),
+    "VN": ("vn2", "sea"),
+}
