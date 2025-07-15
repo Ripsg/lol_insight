@@ -11,10 +11,4 @@ def plot_win_rate(df):
     plt.xlabel("Win %")
     plt.show()
 
-def plot_playstyles(df):
-    style_counts = df["playstyle"].value_counts()
-    style_counts.plot.pie(autopct="%1.1f%%", startangle=90)
-    plt.title("Playstyle Distribution")
-    plt.ylabel("")
-    plt.tight_layout()
-    plt.show()
+
