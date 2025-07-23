@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:15
+    container_name: lol_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: lol_insight
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - lolnet
+
+  web:
+    build: .
+    container_name: lol_insight_app
+    command: python main.py
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"  # Si usas FastAPI o similar
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_URL=postgresql://postgres:1234@db:5432/lol_insight
+    networks:
+      - lolnet
+
+volumes:
+  postgres_data:
+
+networks:
+  lolnet:
+    driver: bridge
